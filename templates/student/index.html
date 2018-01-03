@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ world }}</title>
+</head>
+<body>
+<a href="/admin/">admin</a>
+    <ul>
+        {% for student in students %}
+            <li>{{ student.name }} - {{ student.get_status_display }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <form action="/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
